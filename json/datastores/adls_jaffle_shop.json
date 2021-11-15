@@ -1,0 +1,35 @@
+{
+  "version": "yetl-framework.readthedocs.io/en/alpha1/",
+  "adls": {
+    "name": "jaffle_shop",
+    "description": "{{datastore}} source operational database",
+    "container": "staging",
+    "schema": "default",
+    "account": "adlgeneva",
+    "default_dataset_options": {
+      "schema_versioning": true,
+      "compression_type": "none",
+      "column_delimiter": ",",
+      "row_delimiter": "\n",
+      "skip_line_count": 0,
+      "column_names_ifr": true,
+      "escape_character": "",
+      "quote_character": "",
+      "null_value": "",
+      "empty_column_null": true,
+      "encoding": "utf-8",
+      "timestamp_format": "yyyy-MM-ddTHH:mm:ss.mmmZ",
+      "exception_row_threshold_percent": 80,
+      "in_row_threshold": 1,
+      "timeout_seconds": 2400,
+      "days_retention_period": 30,
+      "partition_path_format": "YYYY/mm/dd",
+      "partition_file_format": "YYYY-mm-dd",
+      "extension": "csv",
+      "format": "csv",
+      "dataset": "{{dataset}}-{{partition_file_format}}.{{ext}}",
+      "path": "{{container}}/{{datastore}}/{{classification}}/{{schema}}/{{partition}}/{{version}}",
+      "spark_schema_path": "{{container}}/spark_schema/{{datastore}}/{{schema}}_{{dataset}}_{{version}}.json"
+    }
+  }
+}

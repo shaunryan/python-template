@@ -1,0 +1,11 @@
+{
+    "databricks_wheel" :
+    {
+        "name": "load_raw",
+        "description": "Generic transformation that loads raw from landing",
+        "reconcile": true,
+        "parameters": [
+            {"name" : "process_id", "type": "integer", "description": "queued process id that all the metadata is linked to"}
+        ]
+    }
+}
