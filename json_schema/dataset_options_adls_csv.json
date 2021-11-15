@@ -74,6 +74,9 @@
     "path": {
       "type": "string"
     },
+    "exception_path": {
+      "type": "string"
+    },
     "data_schema": {
       "type": "object",
       "properties": {
@@ -116,6 +119,7 @@
     "format",
     "dataset",
     "path",
+    "exception_path",
     "data_schema"
   ]
 }
