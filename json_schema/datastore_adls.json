@@ -25,10 +25,7 @@
           "type": "string"
         },
         "default_dataset_options": {
-          "oneOf": [
-            { "$ref": "/schemas/dataset_options_adls_csv" },
-            { "$ref": "/schemas/dataset_options_adls_jsonl" }
-          ]
+            "$ref": "https://example.com/dataset_adls.schema.json" 
         }
       },
       "required": [

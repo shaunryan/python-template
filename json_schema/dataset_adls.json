@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/dataset_adls.schema.json",
-  "title": "Delimited Text Dataset",
-  "description": "An delimited text format described by a flat file format. CSV is a misnomer however it's consistent with spark",
+  "title": "Azure Data Lake Store Dataset",
+  "description": "ADLS data sets are basically files on HDFS. As such they have no built in schema so we enforce a schema by convention. Spark Schema are used for efficient reading, json schema's can also be used for json line data or json in columns for parsing and validation.",
   "type": "object",
   "properties": {
     "format": {
@@ -10,8 +10,8 @@
     },
     "read_options": {
       "oneOf": [
-      { "$ref": "/schemas/read_options_csv" },
-      { "$ref": "/schemas/read_options_jsonl" }
+      { "$ref": "https://example.com/read_options_jsonl.schema.json" },
+      { "$ref": "https://example.com/read_options_jsonl.schema.csv" }
       ]
     },
     "compression_type": {
