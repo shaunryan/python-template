@@ -1,27 +1,37 @@
-<img src="https://img.shields.io/badge/Python-v3.8-blue">
-
-# YETL Framework - It's for Spark!
-
-**Y**et another **ETL** **F**ramework for Spark
+# Introduction
 
 
-https://yetl-framework.readthedocs.io/en/latest/
 
-# Development Setup
+
+# Setup
 
 Create virual environment and install dependencies for local development:
 
 ```
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
-pip install --editable .
 ```
 
-# Configuration & Authentication
+The application requires the following environment variables specific the databricks workspace and security token that you're using for testing, development and deployment. Substitute your own values between the angled brackets:
 
-Azure databricks allows the following authentication methods:
+```
+N/A
+```
+
+Exporting variables doesn't make for a great development experience so I recommend using the enviroment manager tools of your editor and for testing create a ./pytest.ini that looks like this:
+
+```
+[pytest]
+env =
+    
+```
+
+**REMINDER: do NOT commit any files that contain security tokens**
+
+
+# Example
 
 
 # Build
@@ -31,7 +41,7 @@ Build python wheel:
 python setup.py sdist bdist_wheel
 ```
 
-There is a CI build configured for this repo that builds on main origin and publishes to PyPi.
+There is a CI build configured for this repo that builds on main origin on a private Azure DevOps service. It doesn't yet push to PyPi.
 
 # Test
 
@@ -47,7 +57,7 @@ pytest
 
 Test Coverage:
 ```
-pytest --cov=autobricks --cov-report=html
+pytest --cov=mycelium --cov-report=html
 ```
 
 View the report in a browser:
